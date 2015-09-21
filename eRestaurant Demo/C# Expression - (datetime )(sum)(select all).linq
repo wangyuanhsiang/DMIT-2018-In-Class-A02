@@ -17,4 +17,4 @@
 //   && customer.BillDate.Day == 25
 //select customer
 
-from all in Items select all
+from info in Bills where info.BillDate.Month > 05 && info.BillDate.Month < 08 && info.NumberInParty > 10  select info
