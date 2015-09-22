@@ -1,6 +1,6 @@
 <Query Kind="Expression">
   <Connection>
-    <ID>d68db689-0c61-43d2-989d-26df5147c5ad</ID>
+    <ID>92616e0d-d25b-4427-822e-e778fa0610ff</ID>
     <Persist>true</Persist>
     <Server>.</Server>
     <Database>eRestaurant</Database>
@@ -43,7 +43,10 @@ into Keys where Keys.Key.PaidStatus == false select Keys
 //(c)The waiters need the following information:
 //   Orders waiting to be served (sorted by table and showing the items on the order)
 
+//from Bill in Bills where Bill.OrderServed == null select Bill
 
+from Bill in Bills group Bill by Bill.OrderServed into Keys
+where Keys.Key.OrderServed == null select Keys
 
 //(d)The Waiters need the following information:
 //   A list of Active tables waiting to place an order
@@ -53,17 +56,3 @@ into Keys where Keys.Key.PaidStatus == false select Keys
 //(e)The Kitchen Staff needs the following information:
 //   Items to prepare for orders that have been placed but are not ready, grouped by bill.
 //   - Advanced: Include the table number(s) for the bill as a single value (comma-separated table numbers)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
