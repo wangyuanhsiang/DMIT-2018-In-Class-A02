@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\RestaurantContext.cs" />
     <Compile Include="Entities\Reservation.cs" />
     <Compile Include="Entities\SpecialEvent.cs" />
     <Compile Include="Entities\Table.cs" />
@@ -59,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BLL\" />
-    <Folder Include="DAL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

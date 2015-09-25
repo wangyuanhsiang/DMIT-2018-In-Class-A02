@@ -7,10 +7,18 @@ using System.Threading.Tasks;
 
 namespace eRestaurantSystem.Entities
 {
-    class Reservation
+     public class Reservation
     {
-        [Key]
+  
 
+        // constants for valid reservation status values
+        // B = Booked; C = Complete; N = No-show; X = Cancelled
+        public const string Booked = "B";
+        public const string Complete = "C";
+        public const string NoShow = "N";
+        public const string Cancelled = "X";
+
+        //it matches the name of the class, with a suffix of "ID",  don't need [Key]
         public int ReservationID { get; set; }
         [Required, StringLength(40)]
         public string CustomerName { get; set; }
