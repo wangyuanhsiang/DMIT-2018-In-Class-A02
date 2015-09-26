@@ -11,7 +11,7 @@ namespace eRestaurantSystem.DAL
 {
     public class RestaurantContext : DbContext
     {
-        public RestaurantContext() : base("name = Erestaurant") { }
+        public RestaurantContext() : base("name=Erestaurant") { }
 
         public DbSet<Table> Tables { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
