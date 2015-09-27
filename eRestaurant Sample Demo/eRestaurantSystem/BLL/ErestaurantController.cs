@@ -11,11 +11,12 @@ namespace eRestaurantSystem.BLL
 {
     public class ErestaurantController
     {
+         //[DataObjectMethod(DataObjectMethodType.Delete, false)]
         public List<SpecialEvent> GetSpecialEvent()
         {
-            RestaurantContext SpecialEventDBContext = new RestaurantContext();
-
-            return SpecialEventDBContext.SpecialEvents.ToList();
+           using(  RestaurantContext SpecialEventDBContext = new RestaurantContext())
+            { return SpecialEventDBContext.SpecialEvents.ToList();}
+           
         }
     }
 }
