@@ -30,7 +30,7 @@ namespace eRestaurantSystem.Entities
         [Required, StringLength(1, MinimumLength = 1)]
         public string ReservationStatus { get; set; }
         [StringLength(1)]
-        public string EvenntCode { get; set; }
+        public string EventCode { get; set; }
 
         public virtual SpecialEvent SpecialEvents { get; set; }
         public virtual ICollection<Table> Tables { get; set; }
