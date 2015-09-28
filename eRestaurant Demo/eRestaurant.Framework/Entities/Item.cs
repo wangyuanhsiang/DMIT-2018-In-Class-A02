@@ -9,8 +9,9 @@ namespace eRestaurant.Framework.Entities
 {
      public class Item
     {
-        [Key]
-        public int ItemId { get; set; }
+        //[Key]
+         [Required(ErrorMessage= "Item ID is required")]
+        public int ItemID { get; set; }
         public string Description { get; set; }
         public double CurrentPrice { get; set; }
         public double CurrentCost { get; set; }
@@ -20,6 +21,8 @@ namespace eRestaurant.Framework.Entities
         public int MenuCategoryID { get; set; }
 
 
-        public virtual MenuCategory MenuCategory { get; set; }
+        public virtual MenuCategory MenuCategories { get; set; }
+
+        public virtual ICollection<BillItem> BillItems { get; set; }
     }
 }

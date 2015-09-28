@@ -9,15 +9,24 @@ namespace eRestaurant.Framework.Entities
 {
      public class Reservation
     {
-         [Key]
+
+         public const string Booked = "B";
+         public const string Complete = "C";
+         public const string NoShow = "N";
+         public const string Cancelled = "X";
+
+         //[Key]
          public int ReservationID { get; set; }
          public string CustomerName { get; set; }
          public DateTime ReservationDate { get; set; }
          public int NumberinParty { get; set; }
          public string ContactPhone {get;set;}
          public string ReservationStatus { get; set; }
-         public string EventCode { get; set; }
+         public string? EventCode { get; set; }
          
+         public virtual SpecialEvent SpecialEvents {get; set;}
 
+         public virtual ICollection<Table> Tables { get; set;}
+         public virtual ICollection<Bill> Bills { get; set; }
     }
 }

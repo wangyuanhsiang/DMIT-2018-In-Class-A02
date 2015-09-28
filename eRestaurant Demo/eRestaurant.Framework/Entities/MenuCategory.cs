@@ -13,6 +13,7 @@ namespace eRestaurant.Framework.Entities
         public int MenuCategoryID { get; set; }
         public string Description { get; set; }
 
+
         public virtual ICollection<Item> Items { get; set;}
     }
 }
