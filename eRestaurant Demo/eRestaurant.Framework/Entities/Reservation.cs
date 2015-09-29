@@ -23,7 +23,7 @@ namespace eRestaurant.Framework.Entities
          public int NumberinParty { get; set; }
          public string ContactPhone {get;set;}
          public string ReservationStatus { get; set; }
-         public string? EventCode { get; set; }
+         public string EventCode { get; set; }
          
          public virtual SpecialEvent SpecialEvents {get; set;}
 

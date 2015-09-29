@@ -10,13 +10,13 @@ namespace eRestaurant.Framework.Entities
      public class Item
     {
         //[Key]
-         [Required(ErrorMessage= "Item ID is required")]
+        [Required(ErrorMessage= "Item ID is required")]
         public int ItemID { get; set; }
         public string Description { get; set; }
         public double CurrentPrice { get; set; }
         public double CurrentCost { get; set; }
         public bool Active { get; set; }
-        public int? Calories { get; set; }
+        public int Calories { get; set; }
         public string Comment { get; set; }
         public int MenuCategoryID { get; set; }
 

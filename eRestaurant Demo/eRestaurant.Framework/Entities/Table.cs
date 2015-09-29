@@ -12,7 +12,7 @@ namespace eRestaurant.Framework.Entities
     {
         public int TableID { get; set; }
         [Required,  Range (1, 25, ErrorMessage = "Table Number must be between 1 to 25") ]
-        [Range (1, 8)]
+        //[Range (1, 8)]
         public Byte TableNumber { get; set; }
         public Boolean Smoking { get; set; }
         [Range(1,8,  ErrorMessage ="1 to 8" )]

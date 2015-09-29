@@ -9,7 +9,8 @@ namespace eRestaurant.Framework.Entities
 {
     public class MenuCategory
     {
-        [Key]
+       //  [Key]
+        [Required(ErrorMessage="MenuCategory Id is required")]
         public int MenuCategoryID { get; set; }
         public string Description { get; set; }
 

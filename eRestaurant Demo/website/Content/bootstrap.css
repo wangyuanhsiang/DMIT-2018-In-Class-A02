@@ -277,6 +277,8 @@ th {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    left: 0px;
+    width: 15px;
 }
 .glyphicon-asterisk:before {
   content: "\2a";
