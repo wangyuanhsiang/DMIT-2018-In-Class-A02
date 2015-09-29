@@ -16,6 +16,7 @@ namespace eRestaurant.Framework.Entities
          public const string Cancelled = "X";
 
          //[Key]
+         [Required(ErrorMessage= "Reservation Id is Required")]
          public int ReservationID { get; set; }
          public string CustomerName { get; set; }
          public DateTime ReservationDate { get; set; }

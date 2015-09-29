@@ -15,6 +15,7 @@ namespace eRestaurant.Framework.Entities
         [Range (1, 8)]
         public Byte TableNumber { get; set; }
         public Boolean Smoking { get; set; }
+        [Range(1,8,  ErrorMessage ="1 to 8" )]
         public int Capacity { get; set; }
         public Boolean Available { get; set; }
 
@@ -23,6 +24,7 @@ namespace eRestaurant.Framework.Entities
         public Table()
         {
             Available = true;
+            Smoking = false;
         }
     }
 }
