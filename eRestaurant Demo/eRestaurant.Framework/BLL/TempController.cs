@@ -15,10 +15,19 @@ namespace eRestaurant.Framework.BLL
      {
          #region manage special events
          [DataObjectMethod(DataObjectMethodType.Select, false)]
-         public List<SpecialEvent> GetSpecialEvent()
+         public List<SpecialEvent> ListSpecialEvent()
          {
              using (RestaurantContext specialEventDBContext = new RestaurantContext())
              { return specialEventDBContext.SpecialEvents.ToList(); }
+         }
+
+         [DataObjectMethod(DataObjectMethodType.Select, false)]
+         public void getSpecialEvent(int ID)
+         {
+              using (RestaurantContext specialEventDBContext = new RestaurantContext())
+              {
+                  specialEventDBContext.SpecialEvents.Find(ID);
+              }
          }
 
 
@@ -34,9 +43,22 @@ namespace eRestaurant.Framework.BLL
          {       
             using(RestaurantContext specialEventDBContext = new RestaurantContext())
             { var updating = specialEventDBContext.SpecialEvents.Attach(Entities);
-              var matchingWithExistingValues = 
+            var matchingWithExistingValues = specialEventDBContext.Entry<SpecialEvent>(updating);
+            matchingWithExistingValues.State = System.Data.Entity.EntityState.Modified;
+            specialEventDBContext.SaveChanges();
             }
          
+         }
+
+         [DataObjectMethod(DataObjectMethodType.Delete, false)]
+         public void DeleteSpecialEvent(SpecialEvent Entities)
+         {
+             using(RestaurantContext specialEventDBContext = new RestaurantContext())
+             {
+                 var existingvalue = specialEventDBContext.SpecialEvents.Find(Entities.EventCode);
+                 specialEventDBContext.SpecialEvents.Remove(existingvalue);
+                 specialEventDBContext.SaveChanges();
+             }
          }
 
          #endregion
