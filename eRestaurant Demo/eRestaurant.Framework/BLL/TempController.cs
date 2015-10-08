@@ -56,6 +56,7 @@ namespace eRestaurant.Framework.BLL
              using(RestaurantContext specialEventDBContext = new RestaurantContext())
              {
                  var existingvalue = specialEventDBContext.SpecialEvents.Find(Entities.EventCode);
+                 // remember to add the DataKeyNames for delete and update
                  specialEventDBContext.SpecialEvents.Remove(existingvalue);
                  specialEventDBContext.SaveChanges();
              }

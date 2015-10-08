@@ -5,7 +5,7 @@
         <h1>Manage Special Events <span class="glyphicon glyphicon-glass"></span></h1>
     </div>
     <div>
-        <asp:ListView ID="ListView1" runat="server" DataSourceID="SpecialEventDataSource" InsertItemPosition="LastItem">
+        <asp:ListView ID="ListView1" runat="server" DataSourceID="SpecialEventDataSource" InsertItemPosition="LastItem" DataKeyNames="EventCode"   >
             <AlternatingItemTemplate>
                 <tr style="">
                     <td>
