@@ -48,17 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\WorkScheduleDBContext.cs" />
     <Compile Include="Entiies\Employee.cs" />
     <Compile Include="Entiies\EmployeeSkill.cs" />
     <Compile Include="Entiies\Location.cs" />
     <Compile Include="Entiies\PlacementContract.cs" />
     <Compile Include="Entiies\Schedule.cs" />
     <Compile Include="Entiies\Shift.cs" />
+    <Compile Include="Entiies\Skill.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BLL\" />
-    <Folder Include="DAL\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

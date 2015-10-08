@@ -2,13 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ComponentModel.DataAnnotations;
 
 namespace ScheduleDemo.Entiies
 {
     public class EmployeeSkill
     {
+        [Required(ErrorMessage="Employee Skill Id is required")]
         public int EmployeeSkillID { get; set; }
-        public 
+        public int EmployeeID { get; set; }
+        public int SkillID { get; set; }
+        public int Level {get; set;}
+        public int YearOfExperience { get; set; }
+
+        public virtual Employee Employees { get; set; }
+        public virtual Skill Skills { get; set; }
 
     }
 }

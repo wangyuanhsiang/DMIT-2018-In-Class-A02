@@ -8,6 +8,7 @@ namespace ScheduleDemo.Entiies
 {
      public class Schedule
     {
+         [Required(ErrorMessage ="Schedule ID is reqiured")]
          public int ScheduleID { get; set; }
          public DateTime Day { get; set; }
          public int ShiftID { get; set; }
