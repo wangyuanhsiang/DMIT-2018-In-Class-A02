@@ -18,8 +18,8 @@ namespace eRestaurant.Framework.Entities
          public Decimal UnitCost { get; set; }
          public string Notes { get; set; }
 
-         public virtual Bill Bills { get; set; }
-         public virtual Item Items { get; set; }
+         public virtual Bill Bill { get; set; }
+         public virtual Item Item { get; set; }
 
 
      }

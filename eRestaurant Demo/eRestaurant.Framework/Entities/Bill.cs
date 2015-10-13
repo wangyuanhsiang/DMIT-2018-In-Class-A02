@@ -24,9 +24,9 @@ namespace eRestaurant.Framework.Entities
         public TimeSpan OrderServed { get; set; }
         public TimeSpan OrderPaid { get; set; }
 
-        public virtual Reservation Reservations { get; set; }
-        public virtual Table Tables { get; set; }
-        public virtual Waiter Waiters {get; set ;}
+        public virtual Reservation Reservation { get; set; }
+        public virtual Table Table { get; set; }
+        public virtual Waiter Waiter {get; set ;}
 
         public virtual ICollection<BillItem> BillItems { get; set; }
     }
