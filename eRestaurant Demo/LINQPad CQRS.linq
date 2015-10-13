@@ -9,16 +9,16 @@
 
 //CQRS
 
-from cat in MenuCategories orderby cat.Description select new
-{
-   NewDescription = cat.Description,
-   MenuItem = from item in cat.Items
-   where item.Active orderby item.Description select new
-   {
-      Description = item.Description,
-	  price = item.CurrentPrice,
-	  Calories = item.Calories,
-	  Comment = item.Comment
-   }
-   
-}
+//from cat in MenuCategories orderby cat.Description select new
+//{
+//   NewDescription = cat.Description,
+//   MenuItem = from item in cat.Items
+//   where item.Active orderby item.Description select new
+//   {
+//      Description = item.Description,
+//	  price = item.CurrentPrice,
+//	  Calories = item.Calories,
+//	  Comment = item.Comment
+//   }
+//   
+//}
