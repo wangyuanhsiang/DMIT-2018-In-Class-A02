@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="SpecailEventManagement.aspx.cs" Inherits="Admin_SpecailEventManagement" %>
 
+<%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="my" TagName="MessageUserControl" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="row col-md-12">
         <h1>Manage Special Events <span class="glyphicon glyphicon-glass"></span></h1>
@@ -134,7 +136,9 @@
                 </tr>
             </SelectedItemTemplate>
         </asp:ListView>
-        <asp:ObjectDataSource ID="SpecialEventDataSource" runat="server" DataObjectTypeName="eRestaurant.Framework.Entities.SpecialEvent" DeleteMethod="DeleteSpecialEvent" InsertMethod="AddSpecialEvent" OldValuesParameterFormatString="original_{0}" SelectMethod="ListSpecialEvent" TypeName="eRestaurant.Framework.BLL.TempController" UpdateMethod="UpdateSpecialEvent"></asp:ObjectDataSource>
+
+         <my:messageusercontrol runat="server" ID="MessageUserControl" />
+        <asp:ObjectDataSource ID="SpecialEventDataSource" runat="server" DataObjectTypeName="eRestaurant.Framework.Entities.SpecialEvent" DeleteMethod="DeleteSpecialEvent" InsertMethod="AddSpecialEvent" OldValuesParameterFormatString="original_{0}" SelectMethod="ListSpecialEvent" TypeName="eRestaurant.Framework.BLL.TempController" UpdateMethod="UpdateSpecialEvent" OnDeleted="HandleCRUDErrors" OnInserted="HandleCRUDErrors" OnUpdated="HandleCRUDErrors"  ></asp:ObjectDataSource>
     </div>
 
 </asp:Content>
