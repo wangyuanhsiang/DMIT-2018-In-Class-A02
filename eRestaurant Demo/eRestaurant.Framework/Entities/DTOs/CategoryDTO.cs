@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eRestaurant.Framework.Entities.DTOs
 {
-     public class CatagoryDTO
+     public class CategoryDTO
     {
         public string Description { get; set; }
         public IEnumerable<MenuItemDTO> MenuItems { get; set; }

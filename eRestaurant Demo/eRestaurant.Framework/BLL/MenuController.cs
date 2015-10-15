@@ -16,7 +16,7 @@ namespace eRestaurant.Framework.BLL
     public class MenuController
     {
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<CatagoryDTO> ListMenuItem()
+        public List<CategoryDTO> ListMenuItem()
         {
             using(var context = new RestaurantContext())
             {
@@ -24,7 +24,7 @@ namespace eRestaurant.Framework.BLL
 
                 var data = from cat in context.MenuCategories
                            orderby cat.Description
-                           select new CatagoryDTO() // use the DTO 
+                           select new CategoryDTO() // use the DTO 
                            {
                                Description = cat.Description,
                                MenuItems = from item in cat.Items
