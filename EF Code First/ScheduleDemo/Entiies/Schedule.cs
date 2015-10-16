@@ -14,8 +14,8 @@ namespace ScheduleDemo.Entiies
          public int ShiftID { get; set; }
          public int EmployeeID { get; set; }
 
-         public virtual Shift Shifts { get; set; }
-         public virtual Employee Employees { get; set; }
+         public virtual Shift Shift { get; set; }
+         public virtual Employee Employee { get; set; }
         
     }
 }

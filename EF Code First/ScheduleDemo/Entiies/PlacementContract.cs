@@ -13,7 +13,7 @@ namespace ScheduleDemo.Entiies
         public DateTime EndDate { get; set; }
         public int LocationID { get; set; }
 
-        public virtual Location Locations { get; set; }
+        public virtual Location Location { get; set; }
         public virtual ICollection<Shift> Shifts { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace ScheduleDemo.Entiies
         [Required, StringLength(100, MinimumLength = 1, ErrorMessage = "Notes must be between 1 and 50 characters long.")]
         public string Notes { get; set; }
 
-        public virtual PlacementContract PlacementContracts { get; set; }
+        public virtual PlacementContract PlacementContract { get; set; }
         public virtual ICollection<Schedule> Schedules { get; set; }  
     }
 }

@@ -12,12 +12,18 @@ namespace ScheduleDemo.BLL
      [DataObject]
     public class ScheduledemoController
     {
-       
+        #region - Employees Control
         public List<Employee> ListEmployee()
         {
             using (WorkScheduleDBContext EmployeeDBContext = new WorkScheduleDBContext() )
             { return EmployeeDBContext.Employees.ToList(); }
-            
-        } 
+
+        }
+
+        #region - Employees Query
+              
+        #endregion
+        #endregion
+
     }
 }

@@ -15,8 +15,8 @@ namespace ScheduleDemo.Entiies
         public int Level {get; set;}
         public int YearOfExperience { get; set; }
 
-        public virtual Employee Employees { get; set; }
-        public virtual Skill Skills { get; set; }
+        public virtual Employee Employee { get; set; }
+        public virtual Skill Skill { get; set; }
 
     }
 }
