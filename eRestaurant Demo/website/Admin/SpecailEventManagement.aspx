@@ -7,42 +7,20 @@
         <h1>Manage Special Events <span class="glyphicon glyphicon-glass"></span></h1>
     </div>
     <div>
-        <asp:ListView ID="ListView1" runat="server" DataSourceID="SpecialEventDataSource" InsertItemPosition="LastItem" DataKeyNames="EventCode"   >
-            <AlternatingItemTemplate>
-                <tr style="">
-                    <td>
-                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
-                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
-                    </td>
-                    <td>
-                        <asp:Label ID="EventCodeLabel" runat="server" Text='<%# Eval("EventCode") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' />
-                    </td>
-                    <td>
-                        <asp:CheckBox ID="ActiveCheckBox" runat="server" Checked='<%# Eval("Active") %>' Enabled="false" />
-                    </td>
-                  
-                </tr>
-            </AlternatingItemTemplate>
+        <asp:ListView ID="ListView1" runat="server" DataSourceID="SpecialEventDataSource" InsertItemPosition="LastItem" DataKeyNames="EventCode">
             <EditItemTemplate>
-                <tr style="">
-                    <td>
-                        <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+                <div>
+
+                    <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+                    &nbsp;&nbsp;
                         <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="EventCodeTextBox" runat="server" Text='<%# Bind("EventCode") %>' />
-                    </td>
-                    <td>
+                    &nbsp;&nbsp;&nbsp;
+                     <asp:CheckBox ID="ActiveCheckBox" runat="server" Checked='<%# Bind("Active") %>' />
+
+                    <asp:TextBox ID="EventCodeTextBox" runat="server" Text='<%# Bind("EventCode") %>' />
+                    &mdash;
                         <asp:TextBox ID="DescriptionTextBox" runat="server" Text='<%# Bind("Description") %>' />
-                    </td>
-                    <td>
-                        <asp:CheckBox ID="ActiveCheckBox" runat="server" Checked='<%# Bind("Active") %>' />
-                    </td>
-                
-                </tr>
+                </div>
             </EditItemTemplate>
             <EmptyDataTemplate>
                 <table runat="server" style="">
@@ -52,93 +30,46 @@
                 </table>
             </EmptyDataTemplate>
             <InsertItemTemplate>
-                <tr style="">
-                    <td>
-                        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
-                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
-                    </td>
-                    <td>
+                <div>
+
+                    <asp:LinkButton ID="InsertButton" runat="server" CommandName="Insert">Insert &nbsp; <span class="glyphicon glyphicon-plus"></span> </asp:LinkButton>
+                    &nbsp;&nbsp;
+                        <asp:LinkButton ID="CancelButton" runat="server" CommandName="Cancel">Clear &nbsp; <span class="glyphicon glyphicon-refresh"></spa></asp:LinkButton>
+                    &nbsp;&nbsp;&nbsp;
+                     <asp:CheckBox ID="ActiveCheckBox" runat="server" Checked='<%# Bind("Active") %>' />
+                    &mdash;
                         <asp:TextBox ID="EventCodeTextBox" runat="server" Text='<%# Bind("EventCode") %>' />
-                    </td>
-                    <td>
+                    &mdash;
                         <asp:TextBox ID="DescriptionTextBox" runat="server" Text='<%# Bind("Description") %>' />
-                    </td>
-                    <td>
-                        <asp:CheckBox ID="ActiveCheckBox" runat="server" Checked='<%# Bind("Active") %>' />
-                    </td>
-                   
-                </tr>
+                </div>
             </InsertItemTemplate>
             <ItemTemplate>
-                <tr style="">
-                    <td>
-                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
-                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
-                    </td>
-                    <td>
+                <div>
+                   
+                        <asp:LinkButton ID="DeleteButton" runat="server" CommandName="Delete" >Delete &nbsp; <span class="glyphicon glyphicon-trash"> </asp:LinkButton>
+                    &nbsp;&nbsp;
+                        <asp:LinkButton ID="EditButton" runat="server" CommandName="Edit" >Edit &nbsp; <span class="glyphicon glyphicon-pencil"></asp:LinkButton>
+                   &nbsp;&nbsp;&nbsp;
+                    
                         <asp:Label ID="EventCodeLabel" runat="server" Text='<%# Eval("EventCode") %>' />
-                    </td>
-                    <td>
+                     &mdash;
+                    
                         <asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' />
-                    </td>
-                    <td>
+                     &mdash;
                         <asp:CheckBox ID="ActiveCheckBox" runat="server" Checked='<%# Eval("Active") %>' Enabled="false" />
-                    </td>
-                
-                </tr>
+                    
+
+                </div>
             </ItemTemplate>
             <LayoutTemplate>
-                <table runat="server">
-                    <tr runat="server">
-                        <td runat="server">
-                            <table id="itemPlaceholderContainer" runat="server" border="0" style="">
-                                <tr runat="server" style="">
-                                    <th runat="server"></th>
-                                    <th runat="server">EventCode</th>
-                                    <th runat="server">Description</th>
-                                    <th runat="server">Active</th>
-                                  
-                                </tr>
-                                <tr id="itemPlaceholder" runat="server">
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr runat="server">
-                        <td runat="server" style="">
-                            <asp:DataPager ID="DataPager1" runat="server">
-                                <Fields>
-                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
-                                    <asp:NumericPagerField />
-                                    <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
-                                </Fields>
-                            </asp:DataPager>
-                        </td>
-                    </tr>
-                </table>
+              <fieldset runat="server" >
+                   <div runat="server" id="itemPlaceholder" />
+              </fieldset>
             </LayoutTemplate>
-            <SelectedItemTemplate>
-                <tr style="">
-                    <td>
-                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
-                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
-                    </td>
-                    <td>
-                        <asp:Label ID="EventCodeLabel" runat="server" Text='<%# Eval("EventCode") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' />
-                    </td>
-                    <td>
-                        <asp:CheckBox ID="ActiveCheckBox" runat="server" Checked='<%# Eval("Active") %>' Enabled="false" />
-                    </td>
-                   
-                </tr>
-            </SelectedItemTemplate>
         </asp:ListView>
 
-         <my:messageusercontrol runat="server" ID="MessageUserControl" />
-        <asp:ObjectDataSource ID="SpecialEventDataSource" runat="server" DataObjectTypeName="eRestaurant.Framework.Entities.SpecialEvent" DeleteMethod="DeleteSpecialEvent" InsertMethod="AddSpecialEvent" OldValuesParameterFormatString="original_{0}" SelectMethod="ListSpecialEvent" TypeName="eRestaurant.Framework.BLL.TempController" UpdateMethod="UpdateSpecialEvent" OnDeleted="HandleCRUDErrors" OnInserted="HandleCRUDErrors" OnUpdated="HandleCRUDErrors"  ></asp:ObjectDataSource>
+        <my:MessageUserControl runat="server" ID="MessageUserControl" />
+        <asp:ObjectDataSource ID="SpecialEventDataSource" runat="server" DataObjectTypeName="eRestaurant.Framework.Entities.SpecialEvent" DeleteMethod="DeleteSpecialEvent" InsertMethod="AddSpecialEvent" OldValuesParameterFormatString="original_{0}" SelectMethod="ListSpecialEvent" TypeName="eRestaurant.Framework.BLL.TempController" UpdateMethod="UpdateSpecialEvent" OnDeleted="HandleCRUDErrors" OnInserted="HandleCRUDErrors" OnUpdated="HandleCRUDErrors"></asp:ObjectDataSource>
     </div>
 
 </asp:Content>
