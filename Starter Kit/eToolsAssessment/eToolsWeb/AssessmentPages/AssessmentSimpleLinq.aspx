@@ -16,15 +16,16 @@
             <td>
                 <asp:Label ID="Label1" runat="server" Text="Select a Position"></asp:Label></td>
             <td>
-                <asp:DropDownList ID="EmployeePositionList" runat="server" DataSourceID="ObjectDataSource2" DataTextField="Description" DataValueField="PositionID" AppendDataBoundItems="True"> 
-                    <asp:ListItem Value="none">[Select Position]</asp:ListItem>
+                <asp:DropDownList ID="EmployeePositionList" runat="server" DataSourceID="DropDownListDataSource" DataTextField="Description" DataValueField="PositionID" AppendDataBoundItems="True"> 
+                    <asp:ListItem Value= -1>[Select Position]</asp:ListItem>
                     <asp:ListItem Value="">[No Event]</asp:ListItem>
                 </asp:DropDownList>
                 <asp:LinkButton ID="FetchEmployees" runat="server" >Fetch Employees</asp:LinkButton></td>
         </tr>
         <tr>
             <td colspan="2" align="center">
-                <asp:GridView ID="EmployeesResultList" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="ObjectDataSource1" >
+                <asp:GridView ID="EmployeesResultList" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="GridViewDataSource" ForeColor="#333333" GridLines="None" AllowPaging="True" >
+                    <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="EmployeeID" HeaderText="EmployeeID" SortExpression="EmployeeID" />
                         <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
@@ -36,22 +37,26 @@
                         <asp:BoundField DataField="EmployeeUID" HeaderText="EmployeeUID" SortExpression="EmployeeUID" />
                         <asp:BoundField DataField="FullName" HeaderText="FullName" ReadOnly="True" SortExpression="FullName" />
                     </Columns>
-                    <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
-                    <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
-                    <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
-                    <RowStyle BackColor="White" ForeColor="#003399" />
-                    <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-                    <SortedAscendingCellStyle BackColor="#EDF6F6" />
-                    <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
-                    <SortedDescendingCellStyle BackColor="#D6DFDF" />
-                    <SortedDescendingHeaderStyle BackColor="#002876" />
+                    <FooterStyle BackColor="#990000" ForeColor="White" Font-Bold="True" />
+                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+                    <SortedAscendingCellStyle BackColor="#FDF5AC" />
+                    <SortedAscendingHeaderStyle BackColor="#4D0000" />
+                    <SortedDescendingCellStyle BackColor="#FCF6C0" />
+                    <SortedDescendingHeaderStyle BackColor="#820000" />
                    
                 </asp:GridView>
             </td>
         </tr>
     </table>
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="EmployeePosition" TypeName="eToolsSystem.BLL.ToolsController">
+    <asp:ObjectDataSource ID="DropDownListDataSource" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Position_List" TypeName="eToolsSystem.BLL.ToolsController"></asp:ObjectDataSource>
+
+    <asp:ObjectDataSource ID="GridViewDataSource" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="EmployeePosition" TypeName="eToolsSystem.BLL.ToolsController" >
+        <SelectParameters>
+            <asp:ControlParameter ControlID="EmployeePositionList" Name="positionId" PropertyName="SelectedValue" Type="Int32" />
+        </SelectParameters>
     </asp:ObjectDataSource>
-    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Position_List" TypeName="eToolsSystem.BLL.ToolsController"></asp:ObjectDataSource>
-</asp:Content>
+    </asp:Content>
 

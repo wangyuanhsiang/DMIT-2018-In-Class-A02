@@ -25,16 +25,29 @@ namespace eToolsSystem.BLL
         public List<Position> Position_List()
         {
             using (var context = new ToolsContext())
-            { return context.Positions.ToList(); }
+            {
+                return context.Positions.ToList();
+            }
         }
+
+        //[DataObjectMethod(DataObjectMethodType.Select, false)]
+        //public List<Employee> EmployeePosition()
+        //{
+        //    using (var context = new ToolsContext())
+        //    { return context.Employees.ToList(); }
+        //}
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<Employee> EmployeePosition()
+        public List<Employee> EmployeePosition (int positionId)
         {
-            using (var context = new ToolsContext())
-            { return context.Employees.ToList(); }
+            using(var context = new ToolsContext())
+            {
+                var data = from info in context.Employees
+                           where info.PositionID == positionId
+                           select info;
+                return data.ToList();
+            }
         }
-
     
 
         //Query your Employees table using the PositionID parameter
