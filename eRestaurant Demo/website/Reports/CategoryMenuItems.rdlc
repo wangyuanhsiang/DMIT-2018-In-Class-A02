@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.40104in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.40104in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.40104in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.04167in</Width>
+              <Width>1.44271in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -215,13 +215,13 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Price.Value)</Value>
+                              <Value>="Tatol : " &amp; "$ "&amp; Sum(Fields!Price.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>'$'0.00;('$'0.00)</Format>
                                 <Color>#465678</Color>
-                                <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                <rd:FormatSymbolCulture>en-CA</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -363,7 +363,9 @@
                               <Value>=Sum(Fields!Price.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
+                                <Format>'$'0.00;('$'0.00)</Format>
                                 <Color>#4d4d4d</Color>
+                                <rd:FormatSymbolCulture>en-CA</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -380,6 +382,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-CA</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -499,7 +502,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Price.Value)</Value>
+                              <Value>="$ "&amp; Sum(Fields!Price.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -641,9 +644,9 @@
         </TablixRowHierarchy>
         <DataSetName>CategoryMenuItemDS</DataSetName>
         <Top>0.41667in</Top>
-        <Left>1.28125in</Left>
+        <Left>0.5in</Left>
         <Height>1.04167in</Height>
-        <Width>4.04167in</Width>
+        <Width>5.64584in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -654,7 +657,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>6.60292in</Width>
   <Page>
     <PageHeader>
       <Height>1in</Height>
@@ -707,6 +710,39 @@
       <Height>1in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox7">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!ExecutionTime</Value>
+                  <Style>
+                    <Format>D</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox7</rd:DefaultName>
+          <Top>0.02778in</Top>
+          <Left>3.79042in</Left>
+          <Height>0.25in</Height>
+          <Width>2.8125in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>
