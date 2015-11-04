@@ -81,6 +81,16 @@ namespace eRestaurant.Framework.BLL
 
          #endregion
 
+         [DataObjectMethod(DataObjectMethodType.Select, false)]
+         public DateTime getLastBillDateTime()
+         {
+             using (var context = new RestaurantContext())
+             {
+                 var result = context.Bills.Max(row => row.BillDate);
+                 return result;
+             };
+
+         }
      }
 
 
