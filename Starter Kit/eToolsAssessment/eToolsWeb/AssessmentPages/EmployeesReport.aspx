@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <br />
     <div>
-        <asp:DropDownList ID="PositionDropDownList" runat="server" DataSourceID="DropDownList1DataSource" DataTextField="Description" DataValueField="PositionID">
+        <asp:DropDownList ID="PositionDropDownList" runat="server" DataSourceID="DropDownList1DataSource" DataTextField="Description" DataValueField="PositionID" AppendDataBoundItems="True">
             <asp:ListItem Value = -1 >  [select a position] </asp:ListItem>
         </asp:DropDownList>
         <asp:Button ID="Button1" runat="server" Text="Button" />

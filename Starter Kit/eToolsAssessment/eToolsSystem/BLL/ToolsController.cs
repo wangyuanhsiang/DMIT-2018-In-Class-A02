@@ -57,7 +57,7 @@ namespace eToolsSystem.BLL
 
 
         #region
-        //dropdwonlist doesn't work
+        //dropdwonlist does work, refresh the report first
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<EmployeesPOCOs> getEmployeesPOCOs(int positionId)
         {
