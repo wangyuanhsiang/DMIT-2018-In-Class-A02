@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using eToolsSystem.Entities;
 using eToolsSystem.DAL;
+using eToolsSystem.Entities.POCOs;
 #endregion
 
 namespace eToolsSystem.BLL
@@ -53,6 +54,31 @@ namespace eToolsSystem.BLL
         //Query your Employees table using the PositionID parameter
 
         #endregion
+
+
+        #region
+        //dropdwonlist doesn't work
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public List<EmployeesPOCOs> getEmployeesPOCOs(int positionId)
+        {
+            using(var context = new ToolsContext())
+            {
+                var result = from Employee in context.Employees
+                             where Employee.Position.PositionID == positionId
+                             orderby Employee.EmployeeID descending
+                             select new EmployeesPOCOs
+                             {
+                                 ID = Employee.EmployeeID,
+                                 Name = Employee.FirstName + " " + Employee.LastName,
+                                 DateHired = Employee.DateHired
+                             };
+                return result.ToList();
+            }
+
+
+        }
+        #endregion
+
 
 
     }

@@ -62,6 +62,7 @@
     <Compile Include="Entities\Item.cs" />
     <Compile Include="Entities\MenuCategory.cs" />
     <Compile Include="Entities\POCOs\ActiveEvent.cs" />
+    <Compile Include="Entities\POCOs\BillItemPOCOs.cs" />
     <Compile Include="Entities\POCOs\CategoryMenuItem.cs" />
     <Compile Include="Entities\DTOs\DailyReservation.cs" />
     <Compile Include="Entities\Reservation.cs" />

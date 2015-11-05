@@ -51,12 +51,12 @@
     <Compile Include="BLL\ToolsController.cs" />
     <Compile Include="DAL\ToolsContext.cs" />
     <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Entities\POCOs\EmployeesPOCOs.cs" />
     <Compile Include="Entities\Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\DTOs\" />
-    <Folder Include="Entities\POCOs\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

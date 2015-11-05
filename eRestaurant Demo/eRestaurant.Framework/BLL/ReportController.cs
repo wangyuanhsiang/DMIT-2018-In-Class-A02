@@ -11,8 +11,9 @@ namespace eRestaurant.Framework.BLL
 {
     [DataObject]
      public class ReportController
-    {
-        public List<CategoryMenuItem> GetReportCategoryMenuItems()
+     {
+         #region - GetReportCategoryMenuItems
+         public List<CategoryMenuItem> GetReportCategoryMenuItems()
         {
             using(var context = new RestaurantContext())
             {
@@ -29,5 +30,32 @@ namespace eRestaurant.Framework.BLL
                 return result.ToList();
             }
         }
-    }
+        #endregion
+
+
+         #region
+         public List<BillItemPOCOs> getReportBillItemPOCOs()
+         {
+             using(var context = new RestaurantContext())
+             {
+                 var result = from BillItem in context.BillItems
+                              orderby BillItem.ItemID descending
+                              select new BillItemPOCOs
+                              {
+                                  nBillID = BillItem.BillID,
+                                  nItemID = BillItem.ItemID,
+                                  nQuantity = BillItem.Quantity,
+                                  nSalePrice = BillItem.SalePrice,
+                                  nUnitCost = BillItem.UnitCost
+                                  //nNotes = BillItem.Notes
+                                  //nID = BillItem.Bill.BillID,
+                                  //nBillDate = BillItem.Bill.BillDate,
+                                  //nOrderPlaced = BillItem.Bill.OrderPlaced
+                              };
+                return result.ToList();
+             }
+         }
+
+         #endregion
+     }
 }
