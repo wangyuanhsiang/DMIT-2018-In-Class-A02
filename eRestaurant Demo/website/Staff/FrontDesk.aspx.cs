@@ -16,6 +16,7 @@ public partial class Staff_FrontDesk : System.Web.UI.Page
         var controller = new eRestaurant.Framework.BLL.TempController();
         var info = controller.getLastBillDateTime();
 
-        
+        SearchDate.Text = info.ToString("yyyy-MM-dd");
+        SearchTime.Text = info.ToString("HH:mm:ss");
     }
 }
