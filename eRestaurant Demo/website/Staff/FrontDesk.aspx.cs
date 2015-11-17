@@ -11,4 +11,11 @@ public partial class Staff_FrontDesk : System.Web.UI.Page
     {
 
     }
+    protected void MockLastBillingDateTime_Click(object sender, EventArgs e)
+    {
+        var controller = new eRestaurant.Framework.BLL.TempController();
+        var info = controller.getLastBillDateTime();
+
+        
+    }
 }
